@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-contexto="azul">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <link rel="shortcut icon" href="./images/favicon.svg">
+    <link rel="stylehseet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts/script.js" defer></script>
+</head>
+
+<body>
+
+    <section class="container-geral">
+
+        <div class="card">
+            <div class="card__titulo">
+                <h2 class="card__titulo__titulo-da-lista">Título da lista</h2>
+                <button class="card__titulo__editar-titulo" id="editar-titulo"><img src="./assets/images/icon-edit.svg" class="botoes-editar-deletar" alt="botão de edição"></button>
+            </div>
+
+            <button class="card__adicionar-item">Adicionar novo item</button>
+
+            <div class="card__campo-dinamico hidden">
+                <div class="card__input-e-botoes">
+                    <input type="text" placeholder="Descrição do novo item" class="card__input-novo-item">
+                    <div class="card__botoes-adicionar-cancelar">
+                        <button class="card__botao-adicionar">Adicionar item à lista</button>
+                        <button class="card__botao-cancelar">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="card__divider">
+
+            <div class="card__itens-adicionados">
+                <p class="card__lista-vazia">Insira um novo item.</p>
+                <ul class="card__lista-de-itens"></ul>
+
+                <hr class="card__divider">
+
+                <h3 class="card__titulo-concluidas">Itens concluídos</h2>
+                <ul class="card__lista-de-itens-concluidos"></ul>
+            </div>
+
+            <hr class="card__divider">
+
+            <div class="card__botoes-de-remover">
+                <button class="itens-concluidos__botao-remover-concluidas">Remover tarefas concluídas</button>
+                <button class="itens-concluidos__botao-remover-todas">Remover todas as tarefas</button>
+            </div>
+        </div>
+
+    </section>
+
+</body>

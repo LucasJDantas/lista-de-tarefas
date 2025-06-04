@@ -1,0 +1,345 @@
+@font-face { 
+    font-family: Zona Pro; 
+    src: url(./assets/fonts/ZonaPro-Bold.ttf); 
+}
+
+:root {
+    /* Cores */
+    --branco: #ffffff;
+    --cinza-bg: #fbfbfb;
+    --cinza-disabled: #d9d9d9;
+    --cinza-texto: #5d6877;
+    --azul-escuro: #2a78dd;
+    --azul-claro: #67a4f5;
+    --vermelho: #ed4545;
+    --vermelho-escuro: #c22323;
+    --verde: #0ab484;
+    --verde-escuro: #008b4a;
+
+    --bg-azul: #2a78dd;
+    --bg-verde: #0ab484;
+    --bg-rosa: #d87dd3;
+
+    /* Fontes */
+
+    --size-titulo: 2rem;
+    --size-texto: 1rem;
+    --size-botao-l: 0.875rem;
+    --size-botao-s: 0.688rem;
+
+    --size-titulo-lista: 1.5rem;
+
+    --font-family: 'Zona Pro';
+
+    /* Espaçamentos */
+    --padding-s: 0.625rem;
+    --padding-m: 1rem;
+    --padding-xm: 1.25rem;
+    --padding-l: 1.875rem;   
+}
+
+body {
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.container-geral {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    padding: 0;
+}
+
+.card {
+    background-color: var(--cinza-bg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+    border-radius: var(--padding-xm);
+    margin: 0 auto;
+    padding: var(--padding-m);
+    width: 30%;
+
+    /* Ajustes de responsividade */
+    @media (max-width: 1650px)  {
+        width: 35%;
+
+        @media (max-width: 1400px)  {
+        width: 40%;
+
+            @media (max-width: 1250px)  {
+            width: 45%;
+            
+                @media (max-width: 1060px)  {
+                width: 50%;
+
+                    @media (max-width: 790px)  {
+                    width: 55%;
+
+                        @media (max-width: 790px)  {
+                        width: 70%;
+
+                            @media (max-width: 570px)  {
+                            width: 90%;
+                            }
+                        }
+                    }
+                }        
+            }
+        }        
+    }
+}
+
+/* Bloco de título e adicionar item à lista */
+
+.card__titulo {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.card__titulo__titulo-da-lista {
+    font-size: var(--size-titulo);
+    color: var(--azul-escuro);
+    font-family: var(--font-family);
+    padding: var(--padding-s);
+    margin: 0;
+}
+
+.card__titulo__editar-titulo {
+    background: none;
+    border: none;
+}
+
+.card__adicionar-item {
+    background: none;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid var(--azul-claro);
+    border-radius: var(--padding-l);
+    padding: var(--padding-s);
+    color: var(--azul-claro);
+    font-family: var(--font-family);  
+}
+
+.card__adicionar-item:hover {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    border: 2px solid var(--azul-escuro);
+}
+
+/* A classe card__campo-dinamico está no html só para intercalar o hidden */
+
+.card__input-e-botoes{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+}
+
+.card__input-novo-item {
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--cinza-disabled);
+    border-radius: var(--padding-l);
+    padding: var(--padding-m);    
+}
+
+.card__input-novo-item::placeholder {
+    text-align: left;
+    font-size: var(--size-texto);
+    font-family: var(--font-family);
+    color: var(--cinza-disabled); 
+}
+
+.card__botoes-adicionar-cancelar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__botao-adicionar, 
+.card__botao-cancelar {
+    background: none;
+    color: var(--branco);
+    border: none;
+    border-radius: var(--padding-l);
+    padding: var(--padding-s) var(--padding-l);
+    width: 48%;
+    font-family: var(--font-family);
+    font-size: var(--size-botao-s);
+}
+
+.card__botao-cancelar {
+    background-color: var(--vermelho);
+}
+
+.card__botao-cancelar:hover {
+    background-color: var(--vermelho-escuro);
+}
+
+.card__botao-adicionar {
+    background-color: var(--verde);
+}
+
+.card__botao-adicionar:hover {
+    background-color: var(--verde-escuro);
+}
+
+.card__divider {
+    border: 1px solid var(--azul-claro);
+    width: 100%;
+    margin: var(--padding-s) 0;
+}
+
+/* Lista de itens */
+
+.card__itens-adicionados{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+}
+
+.card__lista-vazia {
+    text-align: center;
+    background-color: var(--cinza-disabled);
+    padding: var(--padding-s);
+    border-radius: var(--padding-l);
+    color: var(--branco);
+    font-family: var(--font-family);
+    font-size: var(--size-texto);
+    margin: 0;
+}
+
+.card__lista-de-itens{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+    padding: 0;
+}
+
+.card__lista-de-itens-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--cinza-texto);
+    border-radius: var(--padding-l);
+    padding: var(--padding-s) var(--padding-m);
+    margin: 0;
+}
+
+.item__input-e-texto {
+    display: flex;
+    flex-direction: row;
+    gap: var(--padding-s);
+}
+
+.item__texto {
+    font-family: var(--font-family);
+    font-size: var(--size-texto);
+    color: var(--cinza-texto);
+    padding: 0 var(--padding-s);
+    margin: 0;
+}
+
+.item-input-e-texto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--padding-s);
+}
+
+.item-botoes {
+    display: flex;
+    gap: var(--padding-s);
+}
+
+.item-botoes__editar, .item-botoes__deletar {
+    background: none;
+    border: none;
+}
+
+/* Lista de itens concluídos */
+
+.card__titulo-concluidas {
+    font-family: var(--font-family);
+    font-size: var(--size-titulo-lista);
+    color: var(--verde);
+    padding: 0 var(--padding-s);
+    margin: 0;
+    width: 100%;
+}
+
+.card__lista-de-itens-concluidos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+    justify-content: space-between;
+    padding: 0;
+}
+
+.card__lista-de-itens-item-concluido {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--verde);
+    border-radius: var(--padding-l);
+    padding: var(--padding-s) var(--padding-m);    
+}
+
+.card__lista-de-itens-item-concluido > div > p {
+    font-size: var(--size-texto);
+    color: var(--verde);
+    text-decoration: line-through var(--verde) 1px;
+}
+
+/* Botões de remover todos os itens */
+
+.card__botoes-de-remover {
+    display: flex;
+    justify-content: space-between;
+}
+
+.itens-concluidos__botao-remover-concluidas, .itens-concluidos__botao-remover-todas {
+    font-size: var(--size-botao-s);
+    font-family: var(--font-family);
+    border-radius: var(--padding-l);
+    background: none;
+    padding: var(--padding-s) var(--padding-s);
+    width: 48%;
+}
+
+.itens-concluidos__botao-remover-todas {
+    border: 2px solid var(--vermelho);
+    color: var(--vermelho);
+}
+
+.itens-concluidos__botao-remover-todas:hover {
+    background-color: var(--vermelho);
+    color: var(--branco);
+}
+
+.itens-concluidos__botao-remover-concluidas {
+    border: 2px solid var(--azul-claro);
+    color: var(--verde);
+}
+
+.itens-concluidos__botao-remover-concluidas:hover {
+    background-color: var(--azul-claro);
+    color: var(--branco);
+}
+
+/* Botões remover todas/remover concluídas desabilitados */
+.botoes-de-remover__desabilitados{
+    font-size: var(--size-botao-s);
+    font-family: var(--font-family);
+    border-radius: var(--padding-l);
+    background: none;
+    padding: var(--padding-s);
+    width: 48%;
+    border: 2px solid var(--cinza-disabled);
+    color: var(--cinza-disabled);
+}
