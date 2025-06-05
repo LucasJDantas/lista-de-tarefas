@@ -7,7 +7,7 @@ Projeto pessoal de criação de uma lista de tarefas dinâmica.
 
 Para visualizar a página funcionando: 
 
-<a href="https://https://lucasjdantas.github.io/lista-de-tarefas/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github%20Pages&logoColor=white" target="_blank"></a>
+<a href="https://lucasjdantas.github.io/lista-de-tarefas/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github%20Pages&logoColor=white" target="_blank"></a>
 
 <hr>
 
